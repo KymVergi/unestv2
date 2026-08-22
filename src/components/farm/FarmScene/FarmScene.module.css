@@ -1,0 +1,77 @@
+.scene {
+  display: block;
+  width: 100%;
+  height: 100%;
+  image-rendering: pixelated;
+}
+
+/* Decorative layers: dropped on small screens instead of shipping a second scene. */
+@media (max-width: 780px) {
+  .decor {
+    display: none;
+  }
+}
+
+/*
+ * Only three things move, and all three animate transform alone so the
+ * compositor handles them without repainting the scene.
+ */
+/* Hub sits at Windmill(x 246) + blade offset(9) = 255, base(144) − 38 = 106. */
+.blades {
+  transform-box: view-box;
+  transform-origin: 255px 106px;
+  animation: windmillSpin 14s linear infinite;
+}
+
+.cloudA {
+  animation: cloudDrift 110s linear infinite;
+}
+
+.cloudB {
+  animation: cloudDrift 150s linear infinite;
+  animation-delay: -40s;
+}
+
+.peck {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  animation: peck 4.5s steps(2) infinite;
+}
+
+@keyframes windmillSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes cloudDrift {
+  from {
+    transform: translateX(-12vw);
+  }
+  to {
+    transform: translateX(112vw);
+  }
+}
+
+@keyframes peck {
+  0%,
+  74%,
+  100% {
+    transform: rotate(0deg);
+  }
+  82% {
+    transform: rotate(11deg);
+  }
+  90% {
+    transform: rotate(0deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blades,
+  .cloudA,
+  .cloudB,
+  .peck {
+    animation: none !important;
+  }
+}

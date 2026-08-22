@@ -1,0 +1,75 @@
+.card {
+  --accent: var(--line-strong);
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity: 0.7;
+}
+
+.gold {
+  --accent: var(--gold);
+}
+.cosmic {
+  --accent: var(--cosmic-soft);
+}
+.danger {
+  --accent: var(--red);
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.015);
+}
+
+.title {
+  margin: 0;
+  font-size: 0.6rem;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+}
+
+.gold .title {
+  color: var(--gold);
+}
+.cosmic .title {
+  color: var(--cosmic-soft);
+}
+.default .title {
+  color: var(--cream);
+}
+
+.meta {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--faint);
+  letter-spacing: 0.04em;
+}
+
+.body {
+  padding: 18px;
+}
+
+@media (max-width: 640px) {
+  .body {
+    padding: 14px;
+  }
+  .head {
+    padding: 12px 14px;
+  }
+}

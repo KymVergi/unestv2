@@ -1,0 +1,16 @@
+.svg {
+  width: 100%;
+  height: auto;
+  image-rendering: pixelated;
+}
+
+.animate {
+  transform-origin: 50% 100%;
+  animation: bob 3s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate {
+    animation: none;
+  }
+}

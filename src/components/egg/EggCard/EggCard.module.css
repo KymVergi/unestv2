@@ -1,0 +1,183 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 14px;
+  border-radius: 8px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  transition:
+    border-color 160ms ease,
+    transform 160ms ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+}
+
+.revealed:hover {
+  border-color: var(--gold);
+}
+
+.sealed:hover {
+  border-color: var(--line-strong);
+}
+
+/* ---- art --------------------------------------------------------------- */
+.art {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--bg-deep);
+  border: 1px solid var(--line);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
+.fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 18%;
+  color: var(--faint);
+}
+
+.fallbackNote {
+  font-family: var(--font-display);
+  font-size: 0.34rem;
+  letter-spacing: 0.12em;
+}
+
+/* ---- head -------------------------------------------------------------- */
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.id {
+  font-family: var(--font-display);
+  font-size: 0.6rem;
+  color: var(--cream);
+}
+
+/* ---- weight ------------------------------------------------------------ */
+.weightRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.weightLabel {
+  font-family: var(--font-display);
+  font-size: 0.36rem;
+  letter-spacing: 0.14em;
+  color: var(--faint);
+}
+
+.weightValue {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  color: var(--gold);
+}
+
+.weightValue small {
+  font-size: 0.72rem;
+  color: var(--faint);
+  margin-left: 3px;
+}
+
+.weightTrack {
+  height: 4px;
+  border-radius: 2px;
+  background: var(--surface-3);
+  overflow: hidden;
+}
+
+.weightFill {
+  display: block;
+  height: 100%;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--gold-deep), var(--gold));
+}
+
+/* ---- traits ------------------------------------------------------------ */
+.traits {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.traits li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 0.8rem;
+  padding-bottom: 3px;
+  border-bottom: 1px dotted var(--line);
+}
+
+.traits span {
+  color: var(--faint);
+  letter-spacing: 0.04em;
+}
+
+.traits b {
+  color: var(--text);
+  font-weight: 500;
+  text-align: right;
+}
+
+.mythic b {
+  color: var(--cosmic-soft);
+}
+
+/* ---- sealed ------------------------------------------------------------ */
+.sealedNote {
+  flex: 1;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: var(--faint);
+}
+
+/* ---- pending ----------------------------------------------------------- */
+.pending {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 9px 11px;
+  border-radius: 5px;
+  background: var(--bg-deep);
+  border: 1px solid var(--line);
+}
+
+.pendingLabel {
+  font-family: var(--font-display);
+  font-size: 0.34rem;
+  letter-spacing: 0.12em;
+  color: var(--faint);
+}
+
+.pendingValue {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--green);
+}
+
+.actions {
+  margin-top: auto;
+}

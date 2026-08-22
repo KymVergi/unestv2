@@ -1,0 +1,300 @@
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* ---- document ---------------------------------------------------------- */
+.doc {
+  display: flex;
+  flex-direction: column;
+}
+
+.section {
+  padding: 26px 0;
+  border-bottom: 1px solid var(--line);
+  scroll-margin-top: calc(var(--nav-h) + 24px);
+}
+
+.section:last-child {
+  border-bottom: none;
+}
+
+.sectionHead {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.sectionIndex {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--cosmic-soft);
+}
+
+.sectionTitle {
+  margin: 0;
+  font-size: 0.76rem;
+  color: var(--gold);
+}
+
+.blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* ---- blocks ------------------------------------------------------------ */
+.p {
+  font-size: 0.97rem;
+  line-height: 1.65;
+  color: var(--dim);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.list li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 0.93rem;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+.list li::before {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 10px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+.code {
+  padding: 14px 16px;
+  border-radius: 6px;
+  background: var(--bg-deep);
+  border: 1px solid var(--line);
+  border-left: 2px solid var(--cosmic);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  line-height: 1.7;
+  color: var(--cosmic-soft);
+  white-space: pre-wrap;
+  overflow-x: auto;
+}
+
+.callout {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 13px 15px;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  border-left-width: 2px;
+}
+
+.callout p {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  max-width: none;
+}
+
+.calloutTag {
+  font-family: var(--font-display);
+  font-size: 0.34rem;
+  letter-spacing: 0.16em;
+}
+
+.note {
+  border-left-color: var(--sky);
+  background: rgba(93, 173, 226, 0.06);
+}
+.note .calloutTag {
+  color: var(--sky);
+}
+.note p {
+  color: var(--dim);
+}
+
+.warn {
+  border-left-color: var(--gold);
+  background: rgba(242, 183, 5, 0.07);
+}
+.warn .calloutTag {
+  color: var(--gold);
+}
+.warn p {
+  color: #e6d9b6;
+}
+
+.contracts {
+  margin-top: 18px;
+}
+
+/* ---- traits ------------------------------------------------------------ */
+.traitGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.traitCard {
+  padding: 16px;
+  border-radius: 6px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+.traitName {
+  margin: 0 0 10px;
+  font-size: 0.54rem;
+  color: var(--gold);
+}
+
+.traitValues {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.traitValues li {
+  font-size: 0.84rem;
+  color: var(--dim);
+}
+
+.mythic {
+  color: var(--cosmic-soft) !important;
+  font-weight: 600;
+}
+
+/* ---- faq --------------------------------------------------------------- */
+.faq {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.faqItem {
+  border-radius: 6px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.faqQ {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 15px;
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--font-display);
+  font-size: 0.46rem;
+  line-height: 1.7;
+  letter-spacing: 0.03em;
+  color: var(--text);
+}
+
+.faqQ::-webkit-details-marker {
+  display: none;
+}
+
+.faqQ:hover {
+  color: var(--gold);
+}
+
+.faqMark {
+  flex-shrink: 0;
+  color: var(--cosmic-soft);
+  transition: transform 140ms ease;
+}
+
+.faqItem[open] .faqMark {
+  transform: rotate(90deg);
+}
+
+.faqItem[open] .faqQ {
+  color: var(--gold);
+  border-bottom: 1px solid var(--line);
+}
+
+.faqA {
+  padding: 13px 15px 16px 35px;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--dim);
+  max-width: 70ch;
+}
+
+/* ---- risk -------------------------------------------------------------- */
+.risks {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.risks li {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 15px;
+  border-radius: 6px;
+  background: rgba(231, 76, 60, 0.06);
+  border: 1px solid var(--line);
+  border-left: 2px solid var(--red);
+}
+
+.riskTitle {
+  font-family: var(--font-display);
+  font-size: 0.42rem;
+  line-height: 1.7;
+  letter-spacing: 0.05em;
+  color: #e88b7f;
+}
+
+.riskBody {
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--dim);
+}
+
+.legal {
+  margin-top: 18px;
+  padding: 15px 16px;
+  border-radius: 6px;
+  border: 1px dashed var(--line-strong);
+  font-size: 0.86rem;
+  line-height: 1.6;
+  color: var(--faint);
+  max-width: none;
+}
+
+.cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+@media (max-width: 760px) {
+  .traitGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .risks {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 460px) {
+  .traitGrid {
+    grid-template-columns: 1fr;
+  }
+}

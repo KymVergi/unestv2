@@ -1,0 +1,33 @@
+.wrap {
+  width: 100%;
+  max-width: 128px;
+  margin-inline: auto;
+}
+
+.svg {
+  width: 100%;
+  height: auto;
+}
+
+/* One animated group, transform only. */
+.fire {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  animation: flame 700ms steps(2) infinite;
+}
+
+@keyframes flame {
+  0%,
+  100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(0.86);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fire {
+    animation: none;
+  }
+}

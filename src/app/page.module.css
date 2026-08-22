@@ -1,0 +1,378 @@
+/* ---- hero -------------------------------------------------------------- */
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+}
+
+/* The farm sits behind everything, dimmed so the copy stays readable. */
+.heroScene {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+.heroScene svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.heroFade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(13, 15, 17, 0.95) 0%, rgba(13, 15, 17, 0.7) 46%, transparent 82%),
+    linear-gradient(180deg, rgba(13, 15, 17, 0.55) 0%, transparent 32%, rgba(13, 15, 17, 0.9) 100%);
+}
+
+.heroInner {
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding: 72px 20px 64px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+  align-items: center;
+  gap: 48px;
+}
+
+.heroCopy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.heroBadge {
+  margin-bottom: 4px;
+}
+
+.title {
+  font-size: clamp(2.6rem, 9vw, 4.5rem);
+  letter-spacing: 0.03em;
+  margin: 0;
+  color: var(--cream);
+  text-shadow: 0 0 40px rgba(242, 183, 5, 0.2);
+}
+
+.tagline {
+  font-family: var(--font-display);
+  font-size: clamp(0.6rem, 1.9vw, 0.86rem);
+  line-height: 1.7;
+  letter-spacing: 0.05em;
+  color: var(--gold);
+}
+
+.lead {
+  font-size: 1.08rem;
+  color: var(--text);
+  line-height: 1.55;
+}
+
+.pitch {
+  font-size: 0.96rem;
+  line-height: 1.65;
+  color: var(--dim);
+  max-width: 54ch;
+}
+
+.pitch strong {
+  color: var(--cream);
+  font-weight: 600;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* ---- hero art ---------------------------------------------------------- */
+.heroArt {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.heroGlow {
+  position: absolute;
+  inset: -18% -10% 6%;
+  background: radial-gradient(circle at 50% 45%, rgba(242, 183, 5, 0.16), transparent 62%);
+  pointer-events: none;
+}
+
+.chick {
+  position: relative;
+  width: min(280px, 60vw);
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.5));
+}
+
+.heroCaption {
+  position: relative;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: var(--faint);
+}
+
+/* ---- fee split + weight ------------------------------------------------ */
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  gap: 28px;
+  align-items: start;
+}
+
+.weightCard {
+  position: sticky;
+  top: calc(var(--nav-h) + 20px);
+}
+
+.weightIntro {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--dim);
+  max-width: none;
+}
+
+.weightIntro strong {
+  color: var(--cosmic-soft);
+  font-weight: 600;
+}
+
+.tiers {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 16px 0;
+}
+
+.tier {
+  display: grid;
+  grid-template-columns: 96px 44px minmax(0, 1fr);
+  align-items: baseline;
+  gap: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+
+.tier:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.tierLabel {
+  font-family: var(--font-display);
+  font-size: 0.4rem;
+  letter-spacing: 0.06em;
+}
+
+.tierBonus {
+  font-family: var(--font-mono);
+  font-size: 0.86rem;
+  color: var(--cream);
+  text-align: right;
+}
+
+.tierNote {
+  font-size: 0.8rem;
+  color: var(--faint);
+  line-height: 1.35;
+}
+
+.weightFoot {
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--faint);
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+  max-width: none;
+}
+
+/* ---- traits ------------------------------------------------------------ */
+.traitGrid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.traitCard {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px 14px;
+  border-radius: 6px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  text-align: center;
+  align-items: center;
+}
+
+.traitName {
+  font-family: var(--font-display);
+  font-size: 0.48rem;
+  letter-spacing: 0.06em;
+  color: var(--gold);
+}
+
+.traitCount {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  color: var(--faint);
+}
+
+.traitFoot {
+  margin-top: 16px;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--dim);
+}
+
+/* ---- scarcity ---------------------------------------------------------- */
+.scarcity {
+  display: grid;
+  grid-template-columns: 132px minmax(0, 1fr);
+  grid-template-areas:
+    'furnace math'
+    'furnace note';
+  align-items: center;
+  gap: 18px 26px;
+  padding: 26px 22px;
+  border-radius: 8px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+.furnaceCol {
+  grid-area: furnace;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.furnaceLabel {
+  font-family: var(--font-display);
+  font-size: 0.4rem;
+  letter-spacing: 0.12em;
+  color: var(--orange, #e67e22);
+}
+
+.scarcity .mathRow {
+  grid-area: math;
+}
+
+.scarcity .scarcityNote {
+  grid-area: note;
+}
+
+.mathRow {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.mathCell {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.mathValue {
+  font-family: var(--font-display);
+  font-size: clamp(0.62rem, 1.9vw, 0.95rem);
+  color: var(--cream);
+}
+
+.mathLabel {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+.mathResult .mathValue {
+  color: var(--gold);
+}
+
+.op {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--cosmic-soft);
+}
+
+.scarcityNote {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--dim);
+  max-width: 72ch;
+}
+
+/* ---- cta --------------------------------------------------------------- */
+.cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 26px;
+}
+
+/* ---- responsive -------------------------------------------------------- */
+@media (max-width: 900px) {
+  .heroInner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding-top: 48px;
+  }
+  .heroFade {
+    background: linear-gradient(
+      180deg,
+      rgba(13, 15, 17, 0.7) 0%,
+      rgba(13, 15, 17, 0.45) 30%,
+      rgba(13, 15, 17, 0.95) 88%
+    );
+  }
+  .scarcity {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'furnace'
+      'math'
+      'note';
+  }
+  .heroArt {
+    order: -1;
+  }
+  .split {
+    grid-template-columns: 1fr;
+  }
+  .weightCard {
+    position: static;
+  }
+  .traitGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .traitGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .actions {
+    width: 100%;
+  }
+  .actions > * {
+    flex: 1 1 140px;
+  }
+  .tier {
+    grid-template-columns: 84px 40px;
+  }
+  .tierNote {
+    grid-column: span 2;
+  }
+}

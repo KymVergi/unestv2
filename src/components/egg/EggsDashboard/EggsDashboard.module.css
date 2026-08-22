@@ -1,0 +1,188 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ---- gates ------------------------------------------------------------- */
+.gate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 14px;
+  padding: 64px 24px;
+  border-radius: 10px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+.gateWarn {
+  border-color: rgba(231, 76, 60, 0.4);
+}
+
+.gateIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 10px;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  background: rgba(242, 183, 5, 0.08);
+}
+
+.gateIconWarn {
+  color: var(--red);
+  border-color: var(--red);
+  background: rgba(231, 76, 60, 0.08);
+}
+
+.gateTitle {
+  margin: 0;
+  font-size: clamp(0.8rem, 3vw, 1.1rem);
+}
+
+.gateText {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--dim);
+  max-width: 52ch;
+}
+
+.gateLink {
+  margin-top: 2px;
+}
+
+/* ---- status ------------------------------------------------------------ */
+.statusRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.stats {
+  width: 100%;
+}
+
+/* ---- warning ----------------------------------------------------------- */
+.warning {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 14px 16px;
+  border-radius: 6px;
+  background: rgba(242, 183, 5, 0.08);
+  border: 1px solid rgba(242, 183, 5, 0.32);
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: #e6d9b6;
+  max-width: none;
+}
+
+.warning svg {
+  flex-shrink: 0;
+  margin-top: 4px;
+  color: var(--gold);
+}
+
+.warning em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+/* ---- claim ------------------------------------------------------------- */
+.claimRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 16px 18px;
+  border-radius: 8px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+.claimLabel {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.36rem;
+  letter-spacing: 0.14em;
+  color: var(--faint);
+  margin-bottom: 6px;
+}
+
+.claimValue {
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+  color: var(--green);
+}
+
+/* ---- states ------------------------------------------------------------ */
+.loading {
+  padding: 28px;
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: 0.5rem;
+  letter-spacing: 0.1em;
+  color: var(--faint);
+  border-radius: 8px;
+  border: 1px dashed var(--line-strong);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+  padding: 48px 24px;
+  border-radius: 10px;
+  color: var(--faint);
+  background: var(--surface);
+  border: 1px dashed var(--line-strong);
+}
+
+.empty h3 {
+  margin: 0;
+  color: var(--cream);
+}
+
+.empty p {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--dim);
+  max-width: 50ch;
+}
+
+/* ---- grid -------------------------------------------------------------- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(226px, 1fr));
+  gap: 12px;
+}
+
+.foot {
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: var(--faint);
+  padding: 14px 16px;
+  border-radius: 6px;
+  border-left: 2px solid var(--line-strong);
+  background: rgba(255, 255, 255, 0.015);
+  max-width: none;
+}
+
+@media (max-width: 520px) {
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+  .claimRow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
