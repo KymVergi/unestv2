@@ -23,7 +23,7 @@ export const TOKEN_DECIMALS = 18 as const;
 export const INITIAL_SUPPLY = 100_000_000_000;
 
 /** UNIT = 100_000_000 ether — one NFT per unit of holding capacity. */
-export const UNIT = 100_000_000;
+export const UNIT = 50_000_000;
 
 /** INITIAL_SUPPLY / UNIT. A ceiling set by token maths, not a mint cap. */
 export const MAX_EGGS = INITIAL_SUPPLY / UNIT; // 1,000
